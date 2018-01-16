@@ -1,0 +1,40 @@
+.Header-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: var(--dark-text-color);
+  background-color: var(--light-bg-color);
+  box-shadow: 0 2px 5px rgba(0,0,0,.26);
+  transition: background-color 0.2s ease, color 0.2s ease;
+
+  &.transparent {
+    color: var(--text-color);
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+
+.Header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+
+.Header-logo {
+  display: block;
+  padding: 10px 0;
+
+  img {
+    display: block;
+    max-height: 40px;
+  }
+}
+
+.Header-nav-item {
+  display: inline-block;
+  padding: 10px 0 10px 30px;
+  text-decoration: none;
+  color: inherit;
+}

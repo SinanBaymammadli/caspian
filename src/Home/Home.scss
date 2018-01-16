@@ -1,0 +1,27 @@
+.Home-wrapper {
+  background-image: url("./home.jpg");
+  height: calc(100vw / 1.78);
+  max-height: 600px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  .container {
+    height: 100%;
+  }
+}
+
+.Home-overlay {
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.Home {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.Home-text {
+  font-size: 4rem;
+}
