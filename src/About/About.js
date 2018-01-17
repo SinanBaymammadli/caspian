@@ -1,5 +1,6 @@
 import React from "react";
 
+import img from "./curier.png";
 import "./About.css";
 
 const About = () => {
@@ -7,17 +8,28 @@ const About = () => {
     <section className="About-wrapper">
       <div className="container">
         <div className="About" id="about">
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.
-          </p>
+          <h2 className="section-header">Haqqımızda</h2>
+          <div className="About-grid">
+            <div className="About-text">
+              <p>
+                “Caspian Delivery Service” Məhdud Məsuliyyətli Cəmiyyəti
+                Azərbaycan Respublikası Qanunvericiliyə uyğun qaydada təsis
+                edilərək 27 yanvar 2012-ci il tarixdə 1601502161 dövlət
+                qeydiyyat nömrəsi ilə (VÖEN) Azərbaycan Respublikası Vergilər
+                Nazirliyinin Bakı şəhəri Vergilər Departamentinin Kommersiya
+                Hüquqi Şəxslərin Dövlət Qeydiyyatı İdarəsi tərəfindən qeydiyyata
+                alınmışdır. Şirkət Azərbaycan Respublikası Rabitə və İnformasiya
+                Texnologiyaları Nazirliyi tərəfindən 5 (beş) il müddətinə
+                verilmiş 065602 saylı, 30 may 2013-cü il tarixli lisenziyaya
+                əsasən sürətli poçt rabitə xidmətinin həyata keçirilməsi üzrə
+                fəaliyyət göstərir.
+              </p>
+            </div>
+
+            <div className="About-img">
+              <img src={img} alt="curier" />
+            </div>
+          </div>
         </div>
       </div>
     </section>

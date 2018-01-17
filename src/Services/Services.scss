@@ -1,15 +1,24 @@
+@import "../variables";
+
 .Services-wrapper {
   background-color: var(--light-bg-color);
 }
 
 .Services {
   padding: 30px 0;
+  color: var(--dark-text-color);
 }
 
 .Services-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 40px;
+
+  &.hide {
+    .Services-card:nth-child(n+4) {
+      display: none;
+    }
+  }
 }
 
 .Services-card {
@@ -20,4 +29,25 @@
   padding: 15px;
   background-color: var(--light-bg-color);
   color: var(--dark-text-color);
+
+  &.hide {
+    display: none;
+  }
+}
+
+.Services-footer {
+  margin: 10px 0;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .Services-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .Services-grid {
+    grid-template-columns: 1fr;
+  }
 }

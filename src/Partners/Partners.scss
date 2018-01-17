@@ -1,8 +1,33 @@
+@import "~slick-carousel/slick/slick.css";
+
 .Partners-wrapper {
   background-color: var(--light-bg-color);
   color: var(--dark-text-color);
 }
 
 .Partners {
-  padding: 15px 0;
+  padding: 30px 0;
+}
+
+.Partner-card {
+  margin: 0 48px;
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+}
+
+.slick-arrow {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+.slick-next {
+  left: auto;
+  right: 0;
 }

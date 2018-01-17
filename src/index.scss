@@ -11,10 +11,34 @@ body {
   font-family: sans-serif;
   background-color: var(--primary-color);
   color: var(--text-color);
+  line-height: 1.5;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
+}
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  box-shadow: none;
+  border: none;
+  background-color: transparent;
+
+  svg {
+    width: 24px;
+    height: 24px;
+    will-change: transform;
+    transition: 0.3s transform ease 0.2s;
+  }
+
+  &.rotate {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
 }

@@ -1,0 +1,41 @@
+.sidebar {
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100vh + 100px);
+  background: rgba($color: #000000, $alpha: 0.7);
+  opacity: 0;
+  padding: 80px 0 0 0;
+  will-change: transform, opacity;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+
+  &.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body.showing {
+  overflow: hidden;
+
+  .content {
+    filter: blur(5px);
+  }
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-nav-item {
+  display: block;
+  padding: 15px 10px;
+  color: var(--text-color);
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.5rem;
+}

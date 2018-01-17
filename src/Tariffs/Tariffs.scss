@@ -1,3 +1,35 @@
 .Tariffs {
-  padding: 15px 0;
+  padding: 30px 0;
+
+  &.hide {
+    .Tariffs-card:not(:first-child) {
+      display: none;
+    }
+  }
+}
+
+.Tariffs-grid {
+  &.hide {
+    .Tariffs-card:nth-child(n+4) {
+      display: none;
+    }
+  }
+}
+
+.Tariffs-card {
+  text-align: center;
+  border-bottom: 1px solid #cccccc;
+  padding: 10px 0;
+  margin: 10px 0;
+}
+
+.Tariffs-footer {
+  margin: 10px 0;
+  text-align: center;
+
+  .icon-btn {
+    svg {
+     fill: var(--text-color)
+    }
+  }
 }

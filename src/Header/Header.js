@@ -1,20 +1,14 @@
 import React, { Component } from "react";
-import scrollToElement from "scroll-to-element";
 import "./Header.css";
 import logo from "./logo2.png";
-
-const slideToSection = (e, id) => {
-  e.preventDefault();
-  const section = document.getElementById(id);
-  scrollToElement(section, {
-    offset: -70,
-    duration: 300
-  });
-};
+import navData from "../navData";
+import slideToSection from "../slideToSection";
+import Sidebar from "../Sidebar/Sidebar";
 
 class Header extends Component {
   state = {
-    transparent: true
+    transparent: true,
+    sidebarShowing: false
   };
 
   componentDidMount() {
@@ -35,7 +29,10 @@ class Header extends Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    if (this.state.transparent === nextState.transparent) {
+    if (
+      this.state.transparent === nextState.transparent &&
+      this.state.sidebarShowing === nextState.sidebarShowing
+    ) {
       return false;
     }
     return true;
@@ -55,72 +52,92 @@ class Header extends Component {
     }
   };
 
+  toggleMobileNav = () => {
+    this.setState(
+      {
+        sidebarShowing: !this.state.sidebarShowing
+      },
+      () => {
+        const body = document.querySelector("body");
+
+        if (this.state.sidebarShowing) {
+          body.classList.add("showing");
+        } else {
+          body.classList.remove("showing");
+        }
+      }
+    );
+  };
+
+  closeMobileNav = () => {
+    this.setState(
+      {
+        sidebarShowing: false
+      },
+      () => {
+        const body = document.querySelector("body");
+
+        body.classList.remove("showing");
+      }
+    );
+  };
+
   render() {
     const { transparent } = this.state;
-    return (
+    return [
       <section
         className={
           transparent ? `Header-wrapper transparent` : `Header-wrapper`
         }
+        key="header"
       >
         <div className="container">
           <header className="Header">
-            <a
-              href="#home"
-              onClick={e => slideToSection(e, "home")}
-              className="Header-logo"
-            >
-              <img src={logo} alt="logo" />
-            </a>
+            <div className="Header-left">
+              <button
+                className="icon-btn nav-toggle-btn"
+                onClick={this.toggleMobileNav}
+              >
+                <svg viewBox="0 0 24 24">
+                  <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
+                </svg>
+              </button>
 
-            <nav className="Header-nav">
               <a
                 href="#home"
-                className="Header-nav-item"
-                onClick={e => slideToSection(e, "home")}
+                onClick={e => {
+                  slideToSection(e, "#home");
+                  this.closeMobileNav();
+                }}
+                className="Header-logo"
               >
-                Ana sehife
+                <img src={logo} alt="logo" />
               </a>
-              <a
-                href="#about"
-                className="Header-nav-item"
-                onClick={e => slideToSection(e, "about")}
-              >
-                Haqqimizda
-              </a>
-              <a
-                href="#services"
-                className="Header-nav-item"
-                onClick={e => slideToSection(e, "services")}
-              >
-                Xidmetler
-              </a>
-              <a
-                href="#tariffs"
-                className="Header-nav-item"
-                onClick={e => slideToSection(e, "tariffs")}
-              >
-                Tarifler
-              </a>
-              <a
-                href="#partners"
-                className="Header-nav-item"
-                onClick={e => slideToSection(e, "partners")}
-              >
-                Partnyorlar
-              </a>
-              <a
-                href="#contact"
-                className="Header-nav-item"
-                onClick={e => slideToSection(e, "contact")}
-              >
-                Elaqe
-              </a>
-            </nav>
+            </div>
+
+            <div className="Header-right">
+              <nav className="Header-nav">
+                {navData.map(nav => (
+                  <a
+                    href={nav.link}
+                    className="Header-nav-item"
+                    onClick={e => slideToSection(e, nav.link)}
+                    key={nav.link}
+                  >
+                    {nav.text}
+                  </a>
+                ))}
+              </nav>
+            </div>
           </header>
         </div>
-      </section>
-    );
+      </section>,
+      <Sidebar
+        key="sidebar"
+        show={this.state.sidebarShowing}
+        close={this.closeMobileNav}
+      />
+    ];
   }
 }
 

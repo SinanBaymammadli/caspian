@@ -14,13 +14,15 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Home />
-        <About />
-        <Services />
-        <Tariffs />
-        <Partners />
-        <Contact />
-        <Footer />
+        <div className="content">
+          <Home />
+          <About />
+          <Services />
+          <Tariffs />
+          <Partners />
+          <Contact />
+          <Footer />
+        </div>
       </div>
     );
   }

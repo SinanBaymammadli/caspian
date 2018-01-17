@@ -1,7 +1,10 @@
+@import "../variables";
+
 .Home-wrapper {
   background-image: url("./home.jpg");
   height: calc(100vw / 1.78);
   max-height: 600px;
+  min-height: 500px;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -24,4 +27,11 @@
 
 .Home-text {
   font-size: 4rem;
+}
+
+
+@media (max-width: $md-screen) {
+  .Home-text {
+    font-size: 2.7rem;
+  }
 }

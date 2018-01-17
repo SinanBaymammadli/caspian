@@ -1,3 +1,5 @@
+@import "../variables";
+
 .Header-wrapper {
   position: fixed;
   top: 0;
@@ -7,11 +9,18 @@
   background-color: var(--light-bg-color);
   box-shadow: 0 2px 5px rgba(0,0,0,.26);
   transition: background-color 0.2s ease, color 0.2s ease;
+  z-index: 5;
 
   &.transparent {
     color: var(--text-color);
     background-color: transparent;
     box-shadow: none;
+
+    .nav-toggle-btn {
+      svg {
+        fill: var(--text-color);
+      }
+    }
   }
 }
 
@@ -37,4 +46,28 @@
   padding: 10px 0 10px 30px;
   text-decoration: none;
   color: inherit;
+}
+
+.nav-toggle-btn {
+  display: none;
+
+  svg {
+    fill: var(--dark-text-color);
+  }
+}
+
+@media (max-width: $md-screen) {
+  .Header-nav {
+    display: none;
+  }
+
+  .Header-left {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav-toggle-btn {
+    display: inline-flex;
+  }
 }
