@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import ideal from "./ideal.png";
 import otv from "./otv.png";
 import teching from "./teching.png";
+import spv from "./spv.png";
 import wt from "./wt.jpg";
 import "./Partners.css";
 
@@ -66,6 +67,12 @@ class Partners extends Component {
               <div>
                 <div className="Partner-card">
                   <img src={wt} alt="ideal" />
+                </div>
+              </div>
+
+              <div>
+                <div className="Partner-card">
+                  <img src={spv} alt="ideal" />
                 </div>
               </div>
             </Slider>
