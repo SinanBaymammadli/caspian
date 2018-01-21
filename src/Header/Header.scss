@@ -46,6 +46,11 @@
   padding: 10px 0 10px 30px;
   text-decoration: none;
   color: inherit;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #cccccc;
+  }
 }
 
 .nav-toggle-btn {
