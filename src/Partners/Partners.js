@@ -1,16 +1,20 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
 
-import ideal from "./ideal.png";
-import otv from "./otv.png";
-import teching from "./teching.png";
-import spv from "./spv.png";
-import wt from "./wt.jpg";
+import ideal from "./ideal.webp";
+import otv from "./otv.webp";
+import teching from "./teching.webp";
+import spv from "./spv.webp";
+import wt from "./wt.webp";
 import "./Partners.css";
 
 const Button = ({ next, className, onClick }) => {
   return (
-    <button className={`icon-btn ${className}`} onClick={onClick}>
+    <button
+      className={`icon-btn ${className}`}
+      onClick={onClick}
+      aria-label="Partners slider arrow"
+    >
       {next ? (
         <svg viewBox="0 0 24 24">
           <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />

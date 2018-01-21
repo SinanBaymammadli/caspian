@@ -1,6 +1,6 @@
 import React from "react";
 
-import img from "./curier.png";
+import img from "./curier.webp";
 import "./About.css";
 
 const About = () => {
