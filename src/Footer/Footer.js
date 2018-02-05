@@ -8,7 +8,6 @@ const Footer = () => {
     <section className="Footer-wrapper">
       <div className="container">
         <div className="Footer">
-          <p>by Code Lab</p>
           <p>All rights are reserved {year}</p>
         </div>
       </div>
