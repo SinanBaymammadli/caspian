@@ -1,26 +1,29 @@
+import React from "react";
+import { FormattedMessage } from "react-intl";
+
 const navData = [
   {
-    text: "Ana səhifə",
+    text: <FormattedMessage id="nav.home" defaultMessage="Ana səhifə" />,
     link: "#home"
   },
   {
-    text: "Haqqımızda",
+    text: <FormattedMessage id="nav.about" defaultMessage="Haqqımızda" />,
     link: "#about"
   },
   {
-    text: "Xidmətlər",
+    text: <FormattedMessage id="nav.services" defaultMessage="Xidmətlər" />,
     link: "#services"
   },
   {
-    text: "Tariflər",
+    text: <FormattedMessage id="nav.tariffs" defaultMessage="Tariflər" />,
     link: "#tariffs"
   },
   {
-    text: "Partnyorlar",
+    text: <FormattedMessage id="nav.partners" defaultMessage="Partnyorlar" />,
     link: "#partners"
   },
   {
-    text: "Əlaqə",
+    text: <FormattedMessage id="nav.contact" defaultMessage="Əlaqə" />,
     link: "#contact"
   }
 ];

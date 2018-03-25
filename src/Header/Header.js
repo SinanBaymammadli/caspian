@@ -1,9 +1,11 @@
 import React, { Component } from "react";
+
 import "./Header.css";
 import logo from "./logo2.png";
 import navData from "../navData";
 import slideToSection from "../slideToSection";
 import Sidebar from "../Sidebar/Sidebar";
+import changeLocale from "../locales/changeLocale";
 
 class Header extends Component {
   state = {
@@ -128,6 +130,27 @@ class Header extends Component {
                     {nav.text}
                   </a>
                 ))}
+                <a
+                  role="button"
+                  className="Header-nav-item"
+                  onClick={() => changeLocale("az")}
+                >
+                  AZ
+                </a>
+                <a
+                  role="button"
+                  className="Header-nav-item"
+                  onClick={() => changeLocale("en")}
+                >
+                  EN
+                </a>
+                <a
+                  role="button"
+                  className="Header-nav-item"
+                  onClick={() => changeLocale("ru")}
+                >
+                  RU
+                </a>
               </nav>
             </div>
           </header>

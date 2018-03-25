@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import "./Sidebar.css";
 import navData from "../navData";
 import slideToSection from "../slideToSection";
+import changeLocale from "../locales/changeLocale";
 
 class Sidebar extends Component {
   render() {
@@ -23,6 +24,30 @@ class Sidebar extends Component {
               {nav.text}
             </a>
           ))}
+
+          <div className="lang-links">
+            <a
+              role="button"
+              className="Header-nav-item"
+              onClick={() => changeLocale("az")}
+            >
+              AZ
+            </a>
+            <a
+              role="button"
+              className="Header-nav-item"
+              onClick={() => changeLocale("en")}
+            >
+              EN
+            </a>
+            <a
+              role="button"
+              className="Header-nav-item"
+              onClick={() => changeLocale("ru")}
+            >
+              RU
+            </a>
+          </div>
         </nav>
       </div>
     );

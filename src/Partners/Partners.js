@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
+import { FormattedMessage } from "react-intl";
 
 import ideal from "./ideal.webp";
 import otv from "./otv.webp";
@@ -47,7 +48,13 @@ class Partners extends Component {
       <section className="Partners-wrapper">
         <div className="container">
           <div className="Partners" id="partners">
-            <h2 className="section-header">Partnyorlar</h2>
+            <h2 className="section-header">
+              {" "}
+              <FormattedMessage
+                id="nav.partners"
+                defaultMessage="Partnyorlar"
+              />
+            </h2>
 
             <Slider {...settings}>
               <div>

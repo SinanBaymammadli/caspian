@@ -7,7 +7,7 @@
   width: 100%;
   color: var(--dark-text-color);
   background-color: var(--light-bg-color);
-  box-shadow: 0 2px 5px rgba(0,0,0,.26);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
   transition: background-color 0.2s ease, color 0.2s ease;
   z-index: 5;
 
@@ -47,9 +47,10 @@
   text-decoration: none;
   color: inherit;
   transition: color 0.3s ease;
+  cursor: pointer;
 
   &:hover {
-    color: #6f6f6f;
+    //color: #ddd;
   }
 }
 

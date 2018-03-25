@@ -39,3 +39,11 @@ body.showing {
   text-align: center;
   font-size: 1.5rem;
 }
+
+.lang-links {
+  text-align: center;
+
+  .Header-nav-item {
+    padding: 20px;
+  }
+}

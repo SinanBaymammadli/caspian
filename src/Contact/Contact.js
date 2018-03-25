@@ -1,4 +1,6 @@
 import React from "react";
+import { FormattedMessage } from "react-intl";
+
 import "./Contact.css";
 
 const Contact = () => {
@@ -6,8 +8,15 @@ const Contact = () => {
     <section className="Contact-wrapper">
       <div className="container">
         <div className="Contact" id="contact">
-          <h2>Əlaqə</h2>
-          <p>Kazım Kazımzadə, 93A, Bakı, Yasamal, AZ1065</p>
+          <h2>
+            <FormattedMessage id="nav.contact" defaultMessage="Əlaqə" />
+          </h2>
+          <p>
+            <FormattedMessage
+              id="contact.address"
+              defaultMessage="Kazım Kazımzadə, 93A, Bakı, Yasamal, AZ1065"
+            />
+          </p>
           <p>(+994 12) 510-50-29</p>
           <p>(+994 12) 510-50-19</p>
           <p>(+994 12) 510-50-16</p>
